@@ -1,21 +1,12 @@
+'use client';
+import { useFormStatus } from 'react-dom';
 import ImagePicker from '@/components/meals/image-picker';
 import classes from './page.module.css';
-import { title } from 'process';
+import { shareMeal } from './action';
 
 export default function ShareMealPage() {
-  async function shareMeal(formData: FormData) {
-    'use server';
+  const status = useFormStatus()
 
-    const meal = {
-      title: formData.get('title') as string,
-      summary: formData.get('summary') as string,
-      instructions: formData.get('instructions') as string,
-      image: formData.get('image') as string,
-      creator: formData.get('name') as string,
-      creator_email: formData.get('email') as string,
-    }
-    console.log(meal);
-  }
   return (
     <>
       <header className={classes.header}>
@@ -49,7 +40,7 @@ export default function ShareMealPage() {
             <textarea
               id="instructions"
               name="instructions"
-              rows="10"
+              rows={10}
               required
             ></textarea>
           </p>
