@@ -4,7 +4,7 @@ import logo from "@/app/icon.png";
 import style from "./main-header-style.module.css";
 import MainHeaderBackground from "./main-header-background";
 const links = [
-  { href: "/meals", label: "Meals" },
+  { href: "/meals", label: "Brows Meals" },
   { href: "/meals/share", label: "Share Meal" },
   { href: "/meals/community", label: "Community" },
 ];
