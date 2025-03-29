@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "initdb.js", "lib/meals.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "initdb.js", "lib/meals.js", "app/meals/error.tsx"],
   "exclude": ["node_modules"]
 }

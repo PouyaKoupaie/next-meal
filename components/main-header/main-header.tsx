@@ -6,7 +6,7 @@ import MainHeaderBackground from "./main-header-background";
 const links = [
   { href: "/meals", label: "Brows Meals" },
   { href: "/meals/share", label: "Share Meal" },
-  { href: "/meals/community", label: "Community" },
+  { href: "/community", label: "Community" },
 ];
 
 const MainHeader = () => {
