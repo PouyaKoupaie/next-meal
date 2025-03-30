@@ -3,6 +3,12 @@ import style from "./page.module.css";
 import MealsGrid from "@/components/meals/MealsGrid";
 import { getMeals } from "@/lib/meals";
 import { Suspense } from "react";
+import type { Metadata } from 'next'
+
+export const metadata:Metadata = {
+  title: "Meals",
+  description: "Discover and share delicious meals",
+}
 
 async function Meals() {
   const meals = await getMeals();

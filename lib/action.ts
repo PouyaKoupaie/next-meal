@@ -1,6 +1,7 @@
 "use server";
 
 import { addMeal } from "@/lib/meals";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 function isInvalidInput(input: unknown): boolean {
   return typeof input !== "string" || input.trim().length === 0;
@@ -33,5 +34,10 @@ export async function shareMeal(
     return { message: "Please upload a valid image file." };
   }
   await addMeal(meal);
+  revalidatePath('/meals')
+  // it would revalidate nested routs to by default second argument setted to page
+  // revalidatePath('/meals', 'layout')
+  //targetting all
+  // revalidatePath('/')
   redirect("/meals");
 }

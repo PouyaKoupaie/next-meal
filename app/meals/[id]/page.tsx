@@ -2,12 +2,21 @@ import Image from "next/image";
 import style from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
-const MealDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }){
   const { id } = await params;
   const meal = getMeal(id);
   if (!meal) {
     notFound();
   }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+const MealDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const meal = getMeal(id);
   meal.instructions = meal.instructions.replace(/<[^>]+>/g, "<br />");
   return (
     <>
