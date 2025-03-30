@@ -6,7 +6,7 @@ interface Meal {
     image: string;
     title: string;
     summary: string;
-    creator: string | number;
+    creator: string;
   }
   
 const MealsGrid: React.FC<{meals:Meal[]}> = ({meals}) => {

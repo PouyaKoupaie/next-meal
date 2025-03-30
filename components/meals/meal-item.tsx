@@ -2,8 +2,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import classes from './meal-item.module.css';
+interface MealItemProps {
+  title: string;
+  id: string;
+  image: string; // StaticImageData for imported images
+  summary: string;
+  creator: string;
+}
 
-export default function MealItem({ title, id, image, summary, creator }) {
+export default function MealItem({ title, id, image, summary, creator }:MealItemProps) {
   return (
     <article className={classes.meal}>
       <header>
